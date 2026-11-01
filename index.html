@@ -69,6 +69,9 @@ h2{font-family:var(--font-display);font-weight:600;font-size:1.15rem;text-transf
 .moves b{font-family:var(--font-display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.75rem}
 .moves .up{color:var(--on)}
 .moves .dn{color:var(--off)}
+details.coach{border:1px dashed var(--line);border-radius:6px;padding:8px 12px;background:var(--surface)}
+details.coach summary{cursor:pointer;font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-size:.95rem}
+details.coach .mins{margin-top:8px}
 .tick{align-self:center;width:24px;height:24px;accent-color:var(--pitch)}
 .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
 table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
@@ -106,6 +109,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .tctl button{flex:1}
 }
 @media print{
+  details.coach{display:none}
   .timer{display:none}
   :root{--bg:#fff}
   body{padding-block:0}
@@ -118,7 +122,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <main class="sheet">
   <header>
     <h1>Sideline Sub Card</h1>
-    <p class="meta">U9 &middot; Wednesday &middot; Tompkins Park &middot; two 15 min halves, 1 min break</p>
+    <p class="meta">U9 &middot; Round 3 &middot; Wed 4 Nov, 5:50pm &middot; Tompkins Park, Pitch 4 &middot; vs The Axolotls</p>
   </header>
 
   <div class="timer" id="timer" role="timer">
@@ -135,8 +139,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li>Two subs at each time below, except half-time.</li>
       <li>Make the swap at the first stoppage after the time, at halfway.</li>
       <li>The player coming off must be off before the new one steps on.</li>
-      <li>Call each kid's new position out loud, including players who stay on but change position (shown under each swap).</li>
-      <li>Tick the box when done. The coach only speaks up to change the plan.</li>
+      <li>Each player coming on takes the position of the player going off, unless a move is shown under the swap.</li>
+      <li>Tick the box when done. Two halves of 15 min with a 1 min break.</li>
     </ul>
   </section>
 
@@ -146,47 +150,42 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <div class="swap">
         <div class="time">5:00<small>1st half</small></div>
         <div class="pairs">
-          <div class="pair"><span class="chip on"><b>On</b>Blake <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Max</span></div>
-          <div class="pair"><span class="chip on"><b>On</b>Will <span class="pos">mid</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Emerson</span></div>
-          <div class="moves"><b>Also moving</b><span><span class="up">▲</span> Leon to midfield</span><span><span class="up">▲</span> Harvey to striker</span><span><span class="dn">▼</span> Hugo to defence</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Emerson <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Max</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Will <span class="pos">mid</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Blake</span></div>
         </div>
         <input class="tick" type="checkbox" id="s1" aria-label="5:00 swaps done">
       </div>
       <div class="swap">
         <div class="time">10:00<small>1st half</small></div>
         <div class="pairs">
-          <div class="pair"><span class="chip on"><b>On</b>Emerson <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Hugo</span></div>
-          <div class="pair"><span class="chip on"><b>On</b>Jasper <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Harvey</span></div>
-          <div class="moves"><b>Also moving</b><span><span class="up">▲</span> Leon to striker</span><span><span class="up">▲</span> Blake to midfield</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Hugo <span class="pos">str</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Harvey</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Blake <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Tyler</span></div>
         </div>
         <input class="tick" type="checkbox" id="s2" aria-label="10:00 swaps done">
       </div>
       <div class="swap half">
         <div class="time">15:00<small>Half-time</small></div>
         <div class="pairs">
-          <div class="pair"><span class="chip on"><b>Into goal</b>Jasper</span><span class="for">for</span><span class="chip off"><b>Off</b>Tyler</span></div>
-          <div class="pair"><span class="chip on"><b>On</b>Hugo <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Jasper</span></div>
-          <div class="pair"><span class="chip on"><b>On</b>Harvey <span class="pos">str</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Blake</span></div>
-          <div class="moves"><b>Also moving</b><span><span class="dn">▼</span> Leon to midfield</span></div>
-          <div class="note">Jasper walks from his spot on the pitch into goal, and Hugo takes that spot. Only a 1 minute break, so tell Jasper, Tyler, Hugo, Harvey and Blake before the whistle.</div>
+          <div class="pair"><span class="chip on"><b>Into goal</b>Emerson</span><span class="for">for</span><span class="chip off"><b>Off</b>Jasper</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Max <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Emerson</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Harvey <span class="pos">mid</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Will</span></div>
+          <div class="note">Emerson walks from his spot on the pitch into goal, and Max takes that spot. Jasper and Will come off. Only a 1 minute break, so tell Emerson, Jasper, Max, Harvey and Will before the whistle.</div>
         </div>
         <input class="tick" type="checkbox" id="s3" aria-label="15:00 swaps done">
       </div>
       <div class="swap">
         <div class="time">20:00<small>2nd half</small></div>
         <div class="pairs">
-          <div class="pair"><span class="chip on"><b>On</b>Tyler <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Emerson</span></div>
-          <div class="pair"><span class="chip on"><b>On</b>Blake <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Leon</span></div>
-          <div class="moves"><b>Also moving</b><span><span class="up">▲</span> Hugo to midfield</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Tyler <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Blake</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Will <span class="pos">mid</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Leon</span></div>
         </div>
         <input class="tick" type="checkbox" id="s4" aria-label="20:00 swaps done">
       </div>
       <div class="swap">
         <div class="time">25:00<small>2nd half</small></div>
         <div class="pairs">
-          <div class="pair"><span class="chip on"><b>On</b>Emerson <span class="pos">mid</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Will</span></div>
-          <div class="pair"><span class="chip on"><b>On</b>Max <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Harvey</span></div>
-          <div class="moves"><b>Also moving</b><span><span class="up">▲</span> Blake to midfield</span><span><span class="up">▲</span> Hugo to striker</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Jasper <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Max</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Blake <span class="pos">mid</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Harvey</span></div>
         </div>
         <input class="tick" type="checkbox" id="s5" aria-label="25:00 swaps done">
       </div>
@@ -199,21 +198,29 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <table>
         <thead><tr><th>Time</th><th>Goal</th><th>Defence</th><th>Midfield</th><th>Striker</th><th>Off</th></tr></thead>
         <tbody>
-          <tr><td class="t">0-5</td><td class="gk">Tyler</td><td>Leon, Max</td><td>Emerson, Harvey</td><td>Hugo</td><td class="off">Jasper, Blake, Will</td></tr>
-          <tr><td class="t">5-10</td><td class="gk">Tyler</td><td>Hugo, Blake</td><td>Leon, Will</td><td>Harvey</td><td class="off">Jasper, Emerson, Max</td></tr>
-          <tr><td class="t">10-15</td><td class="gk">Tyler</td><td>Emerson, Jasper</td><td>Will, Blake</td><td>Leon</td><td class="off">Hugo, Harvey, Max</td></tr>
-          <tr><td class="t">15-20</td><td class="gk">Jasper</td><td>Emerson, Hugo</td><td>Will, Leon</td><td>Harvey</td><td class="off">Tyler, Blake, Max</td></tr>
-          <tr><td class="t">20-25</td><td class="gk">Jasper</td><td>Tyler, Blake</td><td>Will, Hugo</td><td>Harvey</td><td class="off">Leon, Emerson, Max</td></tr>
-          <tr><td class="t">25-30</td><td class="gk">Jasper</td><td>Max, Tyler</td><td>Blake, Emerson</td><td>Hugo</td><td class="off">Harvey, Leon, Will</td></tr>
+          <tr><td class="t">0-5</td><td class="gk">Jasper</td><td>Max, Tyler</td><td>Leon, Blake</td><td>Harvey</td><td class="off">Emerson, Hugo, Will</td></tr>
+          <tr><td class="t">5-10</td><td class="gk">Jasper</td><td>Emerson, Tyler</td><td>Leon, Will</td><td>Harvey</td><td class="off">Blake, Hugo, Max</td></tr>
+          <tr><td class="t">10-15</td><td class="gk">Jasper</td><td>Emerson, Blake</td><td>Leon, Will</td><td>Hugo</td><td class="off">Harvey, Tyler, Max</td></tr>
+          <tr><td class="t">15-20</td><td class="gk">Emerson</td><td>Max, Blake</td><td>Leon, Harvey</td><td>Hugo</td><td class="off">Jasper, Tyler, Will</td></tr>
+          <tr><td class="t">20-25</td><td class="gk">Emerson</td><td>Max, Tyler</td><td>Harvey, Will</td><td>Hugo</td><td class="off">Jasper, Blake, Leon</td></tr>
+          <tr><td class="t">25-30</td><td class="gk">Emerson</td><td>Jasper, Tyler</td><td>Will, Blake</td><td>Hugo</td><td class="off">Max, Harvey, Leon</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
+  <details class="coach">
+    <summary>Coach only: match time this game</summary>
+    <div class="mins">
+      <span><b>Emerson</b> 25 (15 in goal)</span><span><b>Jasper</b> 20 (15 in goal)</span><span><b>Leon</b> 20</span><span><b>Harvey</b> 20</span><span><b>Hugo</b> 20</span>
+      <span><b>Blake</b> 20</span><span><b>Tyler</b> 20</span><span><b>Will</b> 20</span><span><b>Max</b> 15</span>
+    </div>
+  </details>
+
   <section>
     <h2>Watch for</h2>
     <ul class="plain">
-      <li>Tired or hurt? Tell the coach. The usual fix is Emerson on for the tired player.</li>
+      <li>Tired or hurt? Tell the coach. Swap them at the next stoppage with whoever is off.</li>
       <li>No keeper change straight after a penalty or free kick is awarded.</li>
       <li>If a swap is missed, make it at the next stoppage and carry on.</li>
     </ul>
