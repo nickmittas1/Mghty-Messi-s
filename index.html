@@ -122,7 +122,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <main class="sheet">
   <header>
     <h1>Sideline Sub Card</h1>
-    <p class="meta">U9 &middot; Round 3 &middot; Wed 4 Nov, 5:50pm &middot; Tompkins Park, Pitch 4 &middot; vs The Axolotls</p>
+    <p class="meta">U9 &middot; Round 4 &middot; Wed 11 Nov, 5:50pm &middot; Tompkins Park, Pitch 3 &middot; vs Suuiii Squad</p>
   </header>
 
   <div class="timer" id="timer" role="timer">
@@ -136,7 +136,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <section>
     <h2>How to run it</h2>
     <ul class="rules">
-      <li>Two subs at each time below, except half-time.</li>
+      <li>One swap at each time below (half-time has a few moves).</li>
       <li>Make the swap at the first stoppage after the time, at halfway.</li>
       <li>The player coming off must be off before the new one steps on.</li>
       <li>Each player coming on takes the position of the player going off, unless a move is shown under the swap.</li>
@@ -150,42 +150,39 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <div class="swap">
         <div class="time">5:00<small>1st half</small></div>
         <div class="pairs">
-          <div class="pair"><span class="chip on"><b>On</b>Emerson <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Max</span></div>
-          <div class="pair"><span class="chip on"><b>On</b>Will <span class="pos">mid</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Blake</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Blake <span class="pos">mid</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Leon</span></div>
         </div>
         <input class="tick" type="checkbox" id="s1" aria-label="5:00 swaps done">
       </div>
       <div class="swap">
         <div class="time">10:00<small>1st half</small></div>
         <div class="pairs">
-          <div class="pair"><span class="chip on"><b>On</b>Hugo <span class="pos">str</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Harvey</span></div>
-          <div class="pair"><span class="chip on"><b>On</b>Blake <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Tyler</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Leon <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Tyler</span></div>
         </div>
         <input class="tick" type="checkbox" id="s2" aria-label="10:00 swaps done">
       </div>
       <div class="swap half">
         <div class="time">15:00<small>Half-time</small></div>
         <div class="pairs">
-          <div class="pair"><span class="chip on"><b>Into goal</b>Emerson</span><span class="for">for</span><span class="chip off"><b>Off</b>Jasper</span></div>
-          <div class="pair"><span class="chip on"><b>On</b>Max <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Emerson</span></div>
-          <div class="pair"><span class="chip on"><b>On</b>Harvey <span class="pos">mid</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Will</span></div>
-          <div class="note">Emerson walks from his spot on the pitch into goal, and Max takes that spot. Jasper and Will come off. Only a 1 minute break, so tell Emerson, Jasper, Max, Harvey and Will before the whistle.</div>
+          <div class="pair"><span class="chip on"><b>Into goal</b>Blake</span><span class="for">for</span><span class="chip off"><b>Off</b>Emerson</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Tyler <span class="pos">mid</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Hugo</span></div>
+          <div class="moves"><b>Also moving</b><span><span class="dn">▼</span> Emerson to Blake's old midfield spot</span><span><span class="up">▲</span> Harvey to striker</span></div>
+          <div class="note">Blake walks from midfield into goal and Emerson takes his midfield spot. Hugo comes off, Tyler comes on, and Harvey moves up to striker. Only a 1 minute break, so tell Blake, Emerson, Hugo, Tyler and Harvey before the whistle.</div>
         </div>
         <input class="tick" type="checkbox" id="s3" aria-label="15:00 swaps done">
       </div>
       <div class="swap">
         <div class="time">20:00<small>2nd half</small></div>
         <div class="pairs">
-          <div class="pair"><span class="chip on"><b>On</b>Tyler <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Blake</span></div>
-          <div class="pair"><span class="chip on"><b>On</b>Will <span class="pos">mid</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Leon</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Hugo <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Jasper</span></div>
         </div>
         <input class="tick" type="checkbox" id="s4" aria-label="20:00 swaps done">
       </div>
       <div class="swap">
         <div class="time">25:00<small>2nd half</small></div>
         <div class="pairs">
-          <div class="pair"><span class="chip on"><b>On</b>Jasper <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Max</span></div>
-          <div class="pair"><span class="chip on"><b>On</b>Blake <span class="pos">mid</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Harvey</span></div>
+          <div class="pair"><span class="chip on"><b>On</b>Jasper <span class="pos">def</span></span><span class="for">for</span><span class="chip off"><b>Off</b>Emerson</span></div>
+          <div class="moves"><b>Also moving</b><span><span class="up">▲</span> Leon to striker</span><span><span class="dn">▼</span> Harvey to midfield</span></div>
         </div>
         <input class="tick" type="checkbox" id="s5" aria-label="25:00 swaps done">
       </div>
@@ -198,12 +195,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <table>
         <thead><tr><th>Time</th><th>Goal</th><th>Defence</th><th>Midfield</th><th>Striker</th><th>Off</th></tr></thead>
         <tbody>
-          <tr><td class="t">0-5</td><td class="gk">Jasper</td><td>Max, Tyler</td><td>Leon, Blake</td><td>Harvey</td><td class="off">Emerson, Hugo, Will</td></tr>
-          <tr><td class="t">5-10</td><td class="gk">Jasper</td><td>Emerson, Tyler</td><td>Leon, Will</td><td>Harvey</td><td class="off">Blake, Hugo, Max</td></tr>
-          <tr><td class="t">10-15</td><td class="gk">Jasper</td><td>Emerson, Blake</td><td>Leon, Will</td><td>Hugo</td><td class="off">Harvey, Tyler, Max</td></tr>
-          <tr><td class="t">15-20</td><td class="gk">Emerson</td><td>Max, Blake</td><td>Leon, Harvey</td><td>Hugo</td><td class="off">Jasper, Tyler, Will</td></tr>
-          <tr><td class="t">20-25</td><td class="gk">Emerson</td><td>Max, Tyler</td><td>Harvey, Will</td><td>Hugo</td><td class="off">Jasper, Blake, Leon</td></tr>
-          <tr><td class="t">25-30</td><td class="gk">Emerson</td><td>Jasper, Tyler</td><td>Will, Blake</td><td>Hugo</td><td class="off">Max, Harvey, Leon</td></tr>
+          <tr><td class="t">0-5</td><td class="gk">Emerson</td><td>Tyler, Jasper</td><td>Leon, Harvey</td><td>Hugo</td><td class="off">Blake</td></tr>
+          <tr><td class="t">5-10</td><td class="gk">Emerson</td><td>Tyler, Jasper</td><td>Blake, Harvey</td><td>Hugo</td><td class="off">Leon</td></tr>
+          <tr><td class="t">10-15</td><td class="gk">Emerson</td><td>Leon, Jasper</td><td>Blake, Harvey</td><td>Hugo</td><td class="off">Tyler</td></tr>
+          <tr><td class="t">15-20</td><td class="gk">Blake</td><td>Leon, Jasper</td><td>Emerson, Tyler</td><td>Harvey</td><td class="off">Hugo</td></tr>
+          <tr><td class="t">20-25</td><td class="gk">Blake</td><td>Leon, Hugo</td><td>Emerson, Tyler</td><td>Harvey</td><td class="off">Jasper</td></tr>
+          <tr><td class="t">25-30</td><td class="gk">Blake</td><td>Jasper, Hugo</td><td>Harvey, Tyler</td><td>Leon</td><td class="off">Emerson</td></tr>
         </tbody>
       </table>
     </div>
@@ -212,8 +209,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <details class="coach">
     <summary>Coach only: match time this game</summary>
     <div class="mins">
-      <span><b>Emerson</b> 25 (15 in goal)</span><span><b>Jasper</b> 20 (15 in goal)</span><span><b>Leon</b> 20</span><span><b>Harvey</b> 20</span><span><b>Hugo</b> 20</span>
-      <span><b>Blake</b> 20</span><span><b>Tyler</b> 20</span><span><b>Will</b> 20</span><span><b>Max</b> 15</span>
+      <span><b>Harvey</b> 30</span><span><b>Emerson</b> 25 (15 in goal)</span><span><b>Blake</b> 25 (15 in goal)</span><span><b>Leon</b> 25</span>
+      <span><b>Tyler</b> 25</span><span><b>Hugo</b> 25</span><span><b>Jasper</b> 25</span>
     </div>
   </details>
 
